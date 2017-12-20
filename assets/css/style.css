@@ -1,0 +1,50 @@
+body {
+  background-color: #f5f6ff;
+  font-family: "Ubuntu", "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+  font-size: 16pt; }
+
+#wrapper {
+  text-align: center; }
+
+#page-title {
+  color: #335; }
+
+#key {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid #ccd;
+  width: 300px;
+  min-height: 300px;
+  margin: auto;
+  transition: all 100ms ease;
+  vertical-align: middle; }
+  #key .key {
+    font-size: 60pt;
+    color: #567;
+    margin: auto; }
+  #key .keycode {
+    font-size: 100pt;
+    color: #569;
+    margin: auto; }
+
+.down {
+  transform: scale(1.2);
+  border-color: #000; }
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  font-size: 12pt;
+  color: #abd; }
+  footer a {
+    color: #789; }
+
+@media (max-width: 400px) {
+  #key {
+    width: 100%;
+    border-width: 1px 0 0 0; } }
+
+/*# sourceMappingURL=style.css.map */

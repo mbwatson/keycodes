@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>keyCode Getter</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+</head>
+<body>
+  <div id="wrapper">
+    <h2 id="page-title">Press a Key</h2>
+    <div id="key">
+      <div class="key"></div>
+      <div class="keycode"></div>
+    </div>
+  </div>
+  <footer>
+    <p>Built with curiosity and a mild touch of JavaScript by <a href="http://mbwatson.github.io/me" target="_blank">Matt Watson</a></p>
+  </footer>
+  <script>
+    window.addEventListener('keydown', function(e) {
+      // console.log(e.key);
+      // console.log(e.keyCode);
+      keyDiv = document.querySelector('.key');
+      keyDiv.innerText = e.key;
+      keycodeDiv = document.querySelector('.keycode');
+      keycodeDiv.innerText = e.keyCode;
+    });
+  </script>
+</body>
+</html>
