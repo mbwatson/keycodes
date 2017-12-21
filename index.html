@@ -6,25 +6,23 @@
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 </head>
 <body>
+  <h2 id="page-title">Press a Key</h2>
   <div id="wrapper">
-    <h2 id="page-title">Press a Key</h2>
-    <div id="key">
-      <div class="key"></div>
-      <div class="keycode"></div>
+    
+    <div class="key">
+      <div class="the-key"></div>
+      <div class="the-keycode"></div>
     </div>
+    
+    <div class="key animator unpressed">
+      <div class="the-key"></div>
+      <div class="the-keycode"></div>
+    </div>
+  
   </div>
   <footer>
     <p>Built with curiosity and a mild touch of JavaScript by <a href="http://mbwatson.github.io/me" target="_blank">Matt Watson</a></p>
   </footer>
-  <script>
-    window.addEventListener('keydown', function(e) {
-      // console.log(e.key);
-      // console.log(e.keyCode);
-      keyDiv = document.querySelector('.key');
-      keyDiv.innerText = e.key;
-      keycodeDiv = document.querySelector('.keycode');
-      keycodeDiv.innerText = e.keyCode;
-    });
-  </script>
+  <script src="assets/js/keycodes.js"></script>
 </body>
 </html>
