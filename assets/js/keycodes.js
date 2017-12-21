@@ -23,6 +23,6 @@ function animateKeypress(e) {
 	// }
 }
 
-window.addEventListener('keypress', function(e) {
+window.addEventListener('keydown', function(e) {
 	animateKeypress(e);
 });
