@@ -5,9 +5,14 @@ window.addEventListener('keydown', function(e) {
   for (let d of keycodeDivs) { d.innerText = e.keyCode; }
 
 	document.querySelector('.animator').style.visibility = 'visible';
-  document.querySelector('.animator').classList.toggle('pressed');
-	setTimeout(function() {
-  	document.querySelector('.animator').style.visibility = 'hidden';
-  	document.querySelector('.animator').classList.toggle('pressed');
-  }, 500);
+  document.querySelector('.animator').classList.add('pressed');
 });
+
+function resetKeyDiv(e) {
+	if (e.propertyName !== 'transform') return;
+	this.style.visibility = 'hidden';
+	this.classList.remove('pressed');
+}
+
+console.log(document.querySelector);
+document.querySelector('.animator').addEventListener('transitionend', resetKeyDiv);
