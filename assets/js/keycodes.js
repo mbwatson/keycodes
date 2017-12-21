@@ -1,18 +1,28 @@
-window.addEventListener('keydown', function(e) {
-  keyDivs = document.querySelectorAll('.the-key');
-  for (let d of keyDivs) { d.innerText = e.key; }
-  keycodeDivs = document.querySelectorAll('.the-keycode');
-  for (let d of keycodeDivs) { d.innerText = e.keyCode; }
+$wrapper = document.querySelector('#wrapper');
+$keyDiv = document.querySelector('.key');
+let $animatedKeyDiv;
 
-	document.querySelector('.animator').style.visibility = 'visible';
-  document.querySelector('.animator').classList.add('pressed');
-});
-
-function resetKeyDiv(e) {
+function removeAnimator(e) {
 	if (e.propertyName !== 'transform') return;
-	this.style.visibility = 'hidden';
-	this.classList.remove('pressed');
+	this.remove();
 }
 
-console.log(document.querySelector);
-document.querySelector('.animator').addEventListener('transitionend', resetKeyDiv);
+function animateKeypress(e) {
+  document.querySelector('.the-key').innerText = e.key;
+  document.querySelector('.the-keycode').innerText = e.keyCode;
+  $animatedKeyDiv = $keyDiv.cloneNode(true);
+  $wrapper.appendChild($animatedKeyDiv);
+  setTimeout(function() {
+  	$animatedKeyDiv.classList.add('pressed');
+  }, 0);
+	$animatedKeyDiv.addEventListener('transitionend', removeAnimator);
+	// for (opacity = 1; opacity > 0; opacity -= 0.1) {
+	// 	setTimeout( function(){
+	// 			document.querySelector('.pressed').style.opacity = opacity;
+	// 	}, 100);
+	// }
+}
+
+window.addEventListener('keypress', function(e) {
+	animateKeypress(e);
+});
